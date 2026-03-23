@@ -2,7 +2,7 @@
 
 # 🔍 TLGMapper
 
-> 🪵 An IDA Pro script that parses [TraceLogging](https://learn.microsoft.com/en-us/windows/win32/tracelogging/trace-logging-portal) metadata embedded in x64 PE binaries and resolves each event to its owning ETW provider and the function that fires it.
+ 🪵 An IDA Pro script that parses [TraceLogging](https://learn.microsoft.com/en-us/windows/win32/tracelogging/trace-logging-portal) metadata embedded in x64 PE binaries and resolves each event to its owning ETW provider and the function that fires it.
 
 ---
 
@@ -128,8 +128,6 @@ Each resolved event record contains:
 
 ---
 
-<video src="./assets/demo.mp4" controls width="500" height="300" controls></video>
-
 ## ⚠️ Limitations
 
 - 🚫 Only x64 PE binaries are supported. 32-bit and non-PE formats are not handled.
@@ -137,13 +135,11 @@ Each resolved event record contains:
 - 🏷️ Type 2 (legacy) provider blobs do not carry an embedded GUID, so the GUID will be reported as `Unknown(Type2)`.
 - 🧱 The blob parser aborts after 128 consecutive unknown bytes, which may cause incomplete results in heavily obfuscated binaries.
 
----
-
 ## ❗ Disclaimer
 This tool is provided "as is" without warranty of any kind, express or implied. The author assumes no responsibility for any damages, data loss, or other adverse effects resulting from the use or misuse of this tool. Use it at your own risk.
 This tool is intended solely for legitimate purposes such as security research, reverse engineering, and incident response. The author is not liable for any consequences arising from the use of this tool in unauthorized or illegal activities.
 
----
+
 ## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
