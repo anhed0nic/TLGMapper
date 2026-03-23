@@ -126,6 +126,8 @@ Each resolved event record contains:
   [Direct-Preceding]: 365
 ```
 
+https://github.com/user-attachments/assets/c25b7da1-351f-4150-9729-ca8d3fd07264
+
 ---
 
 ## ⚠️ Limitations
