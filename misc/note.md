@@ -1,0 +1,1 @@
+To create the JSON file of provider information found here, I first extracted the provider data from each binary using the [TraceLogging metadata blob parser](https://gist.github.com/mattifestation/edbac1614694886c8ef4583149f53658) developed by [Matt Graeber's](https://github.com/mattifestation). Finally, I compiled all the results into a single JSON file.
