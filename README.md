@@ -137,7 +137,7 @@ Each resolved event record contains:
 
 ## ❗ Disclaimer
 This tool is provided "as is" without warranty of any kind, express or implied. The author assumes no responsibility for any damages, data loss, or other adverse effects resulting from the use or misuse of this tool. Use it at your own risk.
-This tool is intended solely for legitimate purposes such as security research, reverse engineering, and incident response. The author is not liable for any consequences arising from the use of this tool in unauthorized or illegal activities.
+This tool is intended solely for legitimate purposes such as security research and reverse engineering. The author is not liable for any consequences arising from the use of this tool in unauthorized or illegal activities.
 
 
 ## 📜 License
