@@ -3,7 +3,7 @@
 This document lists ETW providers on Windows 11 (10.0.26200.7705) where the TraceLogging provider name matches or closely resembles a provider name reported by `logman query providers`.
 
 > **Note on `logman query providers` output:**
-> The logman query providers command lists providers that have registered their instrumentation manifests or MOF files with the system. This means its output primarily contains Manifest-based providers and MOF (Classic) providers, but since the vast majority are Manifest-based, we will treat them as such in this context.
+> The logman query providers command lists providers that have registered their instrumentation manifests or MOF files with the system. This means its output contains Manifest-based providers and MOF (Classic) providers, but since the vast majority are Manifest-based, we will treat them as such in this context.
 ---
 
 ## Exact Match (12 entries)
