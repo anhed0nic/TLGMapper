@@ -1,17 +1,18 @@
 ﻿# Overlapped ETW Providers: TraceLogging vs Manifest-based
 
-This document lists ETW providers on Windows 11 (10.0.26200.7705) where the TraceLogging provider name matches or closely resembles a provider name reported by `logman query providers`.
+This document lists ETW providers on Windows 11 (10.0.26200.7705) where the TraceLogging provider name matches or closely resembles a Manifest-based provider name.
 
-> **Note on `logman query providers` output:**
-> The logman query providers command lists providers that have registered their instrumentation manifests or MOF files with the system. This means its output contains Manifest-based providers and MOF (Classic) providers, but since the vast majority are Manifest-based, we will treat them as such in this context.
+> **Methodology:**
+> Manifest-based providers were extracted using `Enumerate-ETWProviders.ps1`, which calls the `TdhEnumerateProviders` API and filters by `SchemaSource == 0` (XML manifest). This ensures only Manifest-based providers are included, excluding MOF (Classic) providers. 
+
 ---
 
 ## Exact Match (12 entries)
 
 Providers whose names are identical (case-insensitive).
 
-| # | TraceLogging Provider | logman result (Manifest-based Provider) |
-|--:|:----------------------|:-----------------------------------------|
+| # | TraceLogging Provider | Manifest-based Provider |
+|--:|:----------------------|:------------------------|
 | 1 | Microsoft-Windows-AppModel-Runtime | Microsoft-Windows-AppModel-Runtime |
 | 2 | Microsoft-Windows-AppModel-State | Microsoft-Windows-AppModel-State |
 | 3 | Microsoft-Windows-BITS-Client | Microsoft-Windows-Bits-Client |
@@ -31,8 +32,8 @@ Providers whose names are identical (case-insensitive).
 
 Providers whose names become identical when dots (`.`) are replaced with hyphens (`-`). This is the most common naming convention difference between TraceLogging and Manifest-based providers.
 
-| # | TraceLogging Provider | logman result (Manifest-based Provider) |
-|--:|:----------------------|:-----------------------------------------|
+| # | TraceLogging Provider | Manifest-based Provider |
+|--:|:----------------------|:------------------------|
 | 1 | Microsoft.Antimalware.Scan.Interface | Microsoft-Antimalware-Scan-Interface |
 | 2 | Microsoft.System.Diagnostics.DiagnosticInvoker | Microsoft-System-Diagnostics-DiagnosticInvoker |
 | 3 | Microsoft.Windows.AppReadiness | Microsoft-Windows-AppReadiness |
@@ -97,8 +98,8 @@ Providers whose names share a common base but differ in abbreviations, suffixes,
 
 > **Note:** The pairs listed below are only a representative selection identified by fuzzy string matching. This is **not** an exhaustive list of all similar provider names, nor is every pair guaranteed to refer to the same underlying component. Many more similar pairs likely exist. Manual verification is recommended before drawing conclusions about any specific pair.
 
-| # | TraceLogging Provider | logman result (Manifest-based Provider) |
-|--:|:----------------------|:-----------------------------------------|
+| # | TraceLogging Provider | Manifest-based Provider |
+|--:|:----------------------|:------------------------|
 | 1 | Microsoft.Windows.WindowsToGo.Startup.Options | Microsoft-Windows-WindowsToGo-StartupOptions |
 | 2 | Microsoft.Windows.AppXDeploymentServer | Microsoft-Windows-AppXDeployment-Server |
 | 3 | Microsoft.Windows.FolderRedirection | Microsoft-Windows-Folder Redirection |
