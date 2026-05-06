@@ -126,7 +126,12 @@ def _align8(ea):
 
 
 def check_prerequisites():
-    if not idaapi.get_inf_structure().is_64bit():
+    try:
+        is_64 = idaapi.get_inf_structure().is_64bit()
+    except AttributeError:
+        import ida_ida
+        is_64 = ida_ida.inf_is_64bit()
+    if not is_64:
         print("[!] TLGMapper requires an x64 binary.")
         return False
     return True
